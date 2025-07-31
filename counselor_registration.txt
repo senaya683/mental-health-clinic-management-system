@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join The Team - Balance Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom focus ring for accessibility */
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5);
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen font-sans text-gray-800 bg-gray-50">
+    <body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-12 h-12 mr-3 rounded-full shadow-sm"
+            />
+            <span class="text-2xl font-semibold tracking-wide text-pink-600"
+              >Balance Buddy</span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div
+            class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
+          >
+            <a href="about.html" class="transition hover:text-pink-400"
+              >About Us</a
+            >
+            <a href="experts.html" class="transition hover:text-pink-400"
+              >Our Experts</a
+            >
+            <a href="services.html" class="transition hover:text-pink-400"
+              >Services</a
+            >
+            <a href="mindgym.html" class="transition hover:text-pink-400"
+              >Mind Gym</a
+            >
+            <a href="team.html" class="transition hover:text-pink-400"
+              >Join Our Team</a
+            >
+            <a href="contact.html" class="transition hover:text-pink-400"
+              >Contact</a
+            >
+            <a
+              href="login.html"
+              class="px-5 py-2 font-semibold text-white transition rounded-full"
+              style="background-color: #017b92"
+            >
+              Login
+            </a>
+            <!-- Language Selector -->
+            <select
+              class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
+            >
+              <option>English</option>
+              <option>සිංහල</option>
+              <option>தமிழ்</option>
+            </select>
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <button
+            id="menu-toggle"
+            class="text-pink-600 md:hidden focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+        <div class="flex flex-col space-y-3 font-medium text-pink-600">
+          <a href="aboutus.html" class="hover:text-pink-400">About Us</a>
+          <a href="ourexperts.html" class="hover:text-pink-400">Our Experts</a>
+          <a href="services.html" class="hover:text-pink-400">Services</a>
+          <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
+          <a href="counselorregistration.html" class="hover:text-pink-400">Join Our Team</a>
+          <a href="contact.html" class="hover:text-pink-400">Contact</a>
+          <a
+            href="login.html"
+            class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
+          >
+            Login
+          </a>
+          <select
+            class="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+          >
+            <option>English</option>
+            <option>සිංහල</option>
+            <option>தமிழ்</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="flex-grow max-w-5xl px-6 py-12 mx-auto">
+      <header class="mb-10">
+        <h1 class="text-4xl font-extrabold tracking-tight text-blue-900">
+          Join The Team
+        </h1>
+        <p class="mt-2 text-lg text-gray-600">
+          We’re looking for dedicated professionals to join our mental health
+          platform.
+        </p>
+      </header>
+
+      <!-- Vacancies Section -->
+      <section class="mb-16">
+        <h2
+          class="pb-2 mb-6 text-2xl font-semibold text-blue-800 border-b border-gray-300"
+        >
+          Current Vacancies
+        </h2>
+
+        <div class="space-y-8">
+          <article
+            class="p-6 bg-white border border-gray-200 rounded-lg shadow"
+          >
+            <h3 class="mb-1 text-xl font-bold text-blue-900">
+              Business Operations Executive (Part Time)
+            </h3>
+            <p class="mb-2 text-sm italic text-gray-500">
+              No Experience Required
+            </p>
+            <p class="text-gray-700">
+              Responsible for handling day-to-day administrative functions and
+              operations support.
+            </p>
+            <button
+              class="px-5 py-2 mt-4 font-medium text-blue-700 transition border border-blue-700 rounded hover:bg-blue-700 hover:text-white"
+            >
+              Preview Details
+            </button>
+          </article>
+
+          <article
+            class="p-6 bg-white border border-gray-200 rounded-lg shadow"
+          >
+            <h3 class="mb-1 text-xl font-bold text-blue-900">
+              Counseling Psychologist and Clinical Psychologist (Part Time)
+            </h3>
+            <p class="mb-2 text-sm italic text-gray-500">
+              3 Years of Experience Required
+            </p>
+            <p class="text-gray-700">
+              Conduct counseling sessions, workshops, and wellness programs for
+              clients.
+            </p>
+            <button
+              class="px-5 py-2 mt-4 font-medium text-blue-700 transition border border-blue-700 rounded hover:bg-blue-700 hover:text-white"
+            >
+              Preview Details
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Registration Form -->
+      <section>
+        <h2 class="mb-8 text-3xl font-semibold text-blue-900">
+          Counselor Registration
+        </h2>
+        <form
+          id="registrationForm"
+          class="p-8 space-y-8 bg-white rounded-lg shadow-lg"
+          enctype="multipart/form-data"
+          novalidate
+        >
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label
+                for="firstName"
+                class="block mb-1 text-sm font-medium text-gray-700"
+                >First Name <span class="text-red-600">*</span></label
+              >
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter your first name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label
+                for="lastName"
+                class="block mb-1 text-sm font-medium text-gray-700"
+                >Last Name <span class="text-red-600">*</span></label
+              >
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter your last name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label
+                for="contactNumber"
+                class="block mb-1 text-sm font-medium text-gray-700"
+                >Contact Number <span class="text-red-600">*</span></label
+              >
+              <input
+                type="tel"
+                id="contactNumber"
+                name="contactNumber"
+                placeholder="0712345678 or +94712345678"
+                pattern="^(\+94|0)[0-9]{9}$"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block mb-1 text-sm font-medium text-gray-700"
+                >Email Address <span class="text-red-600">*</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="employmentDetails"
+              class="block mb-1 text-sm font-medium text-gray-700"
+              >Employment Details</label
+            >
+            <textarea
+              id="employmentDetails"
+              name="employmentDetails"
+              rows="4"
+              placeholder="Write your current employment details (optional)"
+              class="w-full px-4 py-3 border border-gray-300 rounded-md resize-none focus:ring focus:ring-blue-400 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <div>
+            <label
+              for="vacancy"
+              class="block mb-1 text-sm font-medium text-gray-700"
+              >Select Vacancy <span class="text-red-600">*</span></label
+            >
+            <select
+              id="vacancy"
+              name="vacancy"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-400 focus:outline-none"
+            >
+              <option value="" disabled selected>Select a vacancy</option>
+              <option value="Business Operations Executive (Part Time)">
+                Business Operations Executive (Part Time)
+              </option>
+              <option value="Counseling Psychologist">
+                Counseling Psychologist
+              </option>
+              <option value="Clinical Psychologist">
+                Clinical Psychologist
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              for="cvUpload"
+              class="block mb-1 text-sm font-medium text-gray-700"
+            >
+              Upload CV <span class="text-red-600">*</span>
+              <span class="ml-2 text-xs font-normal text-gray-500"
+                >(PDF, DOCX, DOC, JPEG; Max size: 5MB)</span
+              >
+            </label>
+            <input
+              type="file"
+              id="cvUpload"
+              name="cvUpload"
+              accept=".pdf,.docx,.doc,.jpeg,.jpg"
+              required
+              class="w-full text-gray-700"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 font-semibold text-white transition bg-blue-700 rounded-md hover:bg-blue-800"
+          >
+            Submit Application
+          </button>
+        </form>
+      </section>
+    </main>
+<!-- Footer -->
+    <footer class="pt-10 pb-6 text-gray-800 bg-pink-100">
+      <div class="grid grid-cols-1 gap-8 px-6 mx-auto max-w-7xl md:grid-cols-3">
+        <!-- Logo & Description -->
+        <div>
+          <div class="flex items-center mb-4 space-x-3">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-10 h-10"
+            />
+            <span class="text-2xl font-bold text-pink-600">BALANCE BUDDY</span>
+          </div>
+          <p class="text-sm italic leading-relaxed text-gray-600">
+            Balance Buddy is a social service-oriented mental health platform
+            based in Sri Lanka, offering convenient, confidential, and
+            accessible care from licensed professionals across various
+            specialties.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-semibold text-pink-700">Contact Us</h3>
+          <p>
+            <strong>Hotline number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 696 2222</span
+            >
+          </p>
+          <p>
+            <strong>WhatsApp number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 312 0740</span
+            >
+          </p>
+          <p>
+            <strong>Email:</strong> <br /><a
+              href="mailto:info@balancebuddy.org"
+              class="font-semibold text-blue-900"
+              >info@balancebuddy.org</a
+            >
+          </p>
+        </div>
+
+        <!-- Links & Socials -->
+        <div class="flex flex-col justify-between">
+          <div class="flex mb-4 space-x-4">
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <div class="flex space-x-6 text-sm text-gray-700">
+            <a href="#" class="hover:text-pink-600">Terms & Conditions</a>
+            <a href="#" class="hover:text-pink-600">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-6 text-sm text-center text-gray-600">
+        © 2025 BalanceBuddy.org. All rights reserved. Design by EWD
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <div class="fixed bottom-6 right-6">
+        <a
+          href="#"
+          class="p-3 text-white transition bg-pink-500 rounded-full shadow hover:bg-pink-600"
+        >
+          ↑
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const firstName = this.firstName.value.trim();
+          const lastName = this.lastName.value.trim();
+          const contactNumber = this.contactNumber.value.trim();
+          const email = this.email.value.trim();
+          const vacancy = this.vacancy.value;
+          const fileInput = this.cvUpload;
+          const allowedTypes = [
+            "application/pdf",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "image/jpeg",
+          ];
+
+          if (!firstName || !lastName || !contactNumber || !email || !vacancy) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          const contactPattern = /^(\+94|0)[0-9]{9}$/;
+          if (!contactPattern.test(contactNumber)) {
+            alert("Please enter a valid Sri Lankan contact number.");
+            return;
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+
+          if (fileInput.files.length === 0) {
+            alert("Please upload your CV file.");
+            return;
+          }
+
+          const file = fileInput.files[0];
+          if (!allowedTypes.includes(file.type)) {
+            alert("Invalid file type. Allowed: PDF, DOC, DOCX, JPEG");
+            return;
+          }
+          if (file.size > 5 * 1024 * 1024) {
+            alert("File size exceeds 5 MB.");
+            return;
+          }
+
+          alert("Application submitted successfully! Thank you.");
+
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

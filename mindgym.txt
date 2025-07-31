@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mind Gym - Balance Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* fade-in-up animation */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+      /* gentle card hover */
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-12 h-12 mr-3 rounded-full shadow-sm"
+            />
+            <span class="text-2xl font-semibold tracking-wide text-pink-600"
+              >Balance Buddy</span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div
+            class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
+          >
+            <a href="about.html" class="transition hover:text-pink-400"
+              >About Us</a
+            >
+            <a href="experts.html" class="transition hover:text-pink-400"
+              >Our Experts</a
+            >
+            <a href="services.html" class="transition hover:text-pink-400"
+              >Services</a
+            >
+            <a href="mindgym.html" class="transition hover:text-pink-400"
+              >Mind Gym</a
+            >
+            <a href="team.html" class="transition hover:text-pink-400"
+              >Join Our Team</a
+            >
+            <a href="contact.html" class="transition hover:text-pink-400"
+              >Contact</a
+            >
+            <a
+              href="login.html"
+              class="px-5 py-2 font-semibold text-white transition rounded-full"
+              style="background-color: #017b92"
+            >
+              Login
+            </a>
+            <!-- Language Selector -->
+            <select
+              class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
+            >
+              <option>English</option>
+              <option>සිංහල</option>
+              <option>தமிழ்</option>
+            </select>
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <button
+            id="menu-toggle"
+            class="text-pink-600 md:hidden focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+        <div class="flex flex-col space-y-3 font-medium text-pink-600">
+          <a href="about.html" class="hover:text-pink-400">About Us</a>
+          <a href="experts.html" class="hover:text-pink-400">Our Experts</a>
+          <a href="services.html" class="hover:text-pink-400">Services</a>
+          <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
+          <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
+          <a href="contact.html" class="hover:text-pink-400">Contact</a>
+          <a
+            href="login.html"
+            class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
+          >
+            Login
+          </a>
+          <select
+            class="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+          >
+            <option>English</option>
+            <option>සිංහල</option>
+            <option>தமிழ்</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="max-w-6xl px-6 py-12 mx-auto fade-in-up">
+      <h1
+        class="mb-6 text-4xl font-extrabold tracking-wide text-center text-blue-700"
+      >
+        Mind Gym
+      </h1>
+      <p class="max-w-3xl mx-auto mb-12 text-lg text-center text-blue-600">
+        Strengthen your mental wellness with trusted videos and insightful
+        articles curated by our experts.
+      </p>
+
+      <!-- Videos Section -->
+      <section class="mb-16">
+        <h2 class="mb-8 text-3xl font-semibold text-blue-700">
+          Mental Health Videos
+        </h2>
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Video 1 -->
+          <div
+            class="overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 card-hover"
+          >
+            <iframe
+              src="https://www.youtube.com/watch?v=eVFzbxmKNUw"
+              title="Mental Health Awareness"
+              allowfullscreen
+              class="w-full h-full"
+            ></iframe>
+          </div>
+          <!-- Video 2 -->
+          <div
+            class="overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 card-hover"
+          >
+            <iframe
+              src="https://www.youtube.com/watch?v=LnJwH_PZXnM"
+              title="Managing Anxiety"
+              allowfullscreen
+              class="w-full h-full"
+            ></iframe>
+          </div>
+          <!-- Video 3 -->
+          <div
+            class="overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 card-hover"
+          >
+            <iframe
+              src="https://www.youtube.com/watch?v=rkZl2gsLUp4"
+              title="Meditation for Mental Health"
+              allowfullscreen
+              class="w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Articles Section -->
+      <section>
+        <h2 class="mb-8 text-3xl font-semibold text-blue-700">
+          Featured Articles
+        </h2>
+        <div class="space-y-8">
+          <!-- Article 1 -->
+          <article class="p-6 bg-white shadow-md rounded-2xl card-hover">
+            <h3 class="mb-3 text-2xl font-bold text-blue-800">
+              The Importance of Mental Health
+            </h3>
+            <p class="mb-4 text-blue-700">
+              Mental health is essential for overall well-being. This article
+              explores why nurturing your mind is just as important as physical
+              health...
+            </p>
+            <a href="#" class="font-semibold text-blue-600 hover:underline"
+              >Read More →</a
+            >
+          </article>
+
+          <!-- Article 2 -->
+          <article class="p-6 bg-white shadow-md rounded-2xl card-hover">
+            <h3 class="mb-3 text-2xl font-bold text-blue-800">
+              How to Manage Anxiety Effectively
+            </h3>
+            <p class="mb-4 text-blue-700">
+              Anxiety can affect anyone. Learn practical strategies and coping
+              mechanisms that can help reduce anxiety and improve daily
+              living...
+            </p>
+            <a href="#" class="font-semibold text-blue-600 hover:underline"
+              >Read More →</a
+            >
+          </article>
+
+          <!-- Article 3 -->
+          <article class="p-6 bg-white shadow-md rounded-2xl card-hover">
+            <h3 class="mb-3 text-2xl font-bold text-blue-800">
+              Meditation and Mindfulness Techniques
+            </h3>
+            <p class="mb-4 text-blue-700">
+              Discover the benefits of meditation and mindfulness practices that
+              calm your mind and boost emotional resilience over time...
+            </p>
+            <a href="#" class="font-semibold text-blue-600 hover:underline"
+              >Read More →</a
+            >
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-10 pb-6 text-gray-800 bg-pink-100">
+      <div class="grid grid-cols-1 gap-8 px-6 mx-auto max-w-7xl md:grid-cols-3">
+        <!-- Logo & Description -->
+        <div>
+          <div class="flex items-center mb-4 space-x-3">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-10 h-10"
+            />
+            <span class="text-2xl font-bold text-pink-600">BALANCE BUDDY</span>
+          </div>
+          <p class="text-sm italic leading-relaxed text-gray-600">
+            Balance Buddy is a social service-oriented mental health platform
+            based in Sri Lanka, offering convenient, confidential, and
+            accessible care from licensed professionals across various
+            specialties.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-semibold text-pink-700">Contact Us</h3>
+          <p>
+            <strong>Hotline number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 696 2222</span
+            >
+          </p>
+          <p>
+            <strong>WhatsApp number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 312 0740</span
+            >
+          </p>
+          <p>
+            <strong>Email:</strong> <br /><a
+              href="mailto:info@balancebuddy.org"
+              class="font-semibold text-blue-900"
+              >info@balancebuddy.org</a
+            >
+          </p>
+        </div>
+
+        <!-- Links & Socials -->
+        <div class="flex flex-col justify-between">
+          <div class="flex mb-4 space-x-4">
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <div class="flex space-x-6 text-sm text-gray-700">
+            <a href="#" class="hover:text-pink-600">Terms & Conditions</a>
+            <a href="#" class="hover:text-pink-600">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-6 text-sm text-center text-gray-600">
+        © 2025 BalanceBuddy.org. All rights reserved. Design by EWD
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <div class="fixed bottom-6 right-6">
+        <a
+          href="#"
+          class="p-3 text-white transition bg-pink-500 rounded-full shadow hover:bg-pink-600"
+        >
+          ↑
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

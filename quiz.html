@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balance Buddy - Happiness Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #fdfdfd;
+        font-family: "Segoe UI", sans-serif;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      .question-box,
+      .progress-box {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .question-number {
+        background: #cc4c9b;
+        color: white;
+        border-radius: 50%;
+        padding: 15px 25px;
+        font-weight: bold;
+        font-size: 20px;
+        display: inline-block;
+      }
+      .question-text {
+        font-size: 1.25rem;
+        color: #08415c;
+        margin: 20px 0;
+      }
+      .btn-scale {
+        margin: 5px;
+      }
+      .next-btn {
+        background-color: #cc4c9b;
+        color: white;
+      }
+      .next-btn:hover {
+        background-color: #b03e89;
+      }
+      /* Circular Progress Bar */
+      .circular-progress {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: conic-gradient(#cc4c9b 0%, #e5e5e5 0%);
+        margin: auto;
+      }
+      .circular-progress span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        color: #08415c;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container d-flex flex-wrap gap-4 justify-content-between">
+      <!-- Left Side: Questions -->
+      <div class="col-lg-7 question-box">
+        <div class="d-flex align-items-center mb-3">
+          <div class="question-number" id="questionNum">1</div>
+          <div class="ms-3 text-muted">of 10 questions</div>
+        </div>
+        <div class="question-text" id="questionText">Loading...</div>
+
+        <div id="optionsContainer" class="text-center mb-4">
+          <!-- Options appear here -->
+        </div>
+
+        <div class="text-center">
+          <button class="btn next-btn" onclick="nextQuestion()">
+            Next Question
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Side: Progress -->
+      <div class="col-lg-4 progress-box text-center">
+        <h5 class="text-muted">YOUR PROGRESS</h5>
+        <div class="circular-progress mb-3" id="circularProgress">
+          <span id="progressPercent">0%</span>
+        </div>
+        <p class="mt-3">If You Need Immediate Help, Call Us</p>
+        <p class="fw-bold fs-5 text-primary">+94 71 312 0740</p>
+      </div>
+    </div>
+    <div class="container my-5">
+      <!-- Score Box -->
+      <div class="d-flex align-items-center mb-3">
+        <div class="me-3">
+          <img src="sad-face.png" alt="Sad Face" style="width: 100px" />
+        </div>
+        <div>
+          <h3
+            style="
+              color: white;
+              background-color: #f44336;
+              padding: 10px 20px;
+              border-radius: 10px;
+            "
+          >
+            11 <small>Your Leger Mood Index</small>
+          </h3>
+        </div>
+        <div class="ms-4">
+          <h5 style="color: green">
+            Average Score Should Be: <strong>35</strong>
+          </h5>
+        </div>
+      </div>
+
+      <div class="container my-5">
+        <div class="question-box text-center">
+          <h5 id="questionNum" class="mb-3"></h5>
+          <p id="questionText" class="fs-5 mb-4"></p>
+
+          <div
+            id="optionsContainer"
+            class="d-flex flex-wrap justify-content-center gap-2 mb-4"
+          ></div>
+
+          <div
+            id="circularProgress"
+            class="mx-auto mb-4"
+            style="
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              background: #e5e5e5;
+              position: relative;
+            "
+          >
+            <span
+              id="progressPercent"
+              class="position-absolute top-50 start-50 translate-middle fw-bold fs-4"
+            ></span>
+          </div>
+        </div>
+
+        <!-- Bootstrap alert for low score message -->
+        <div
+          id="low-score-message"
+          class="alert alert-danger text-center"
+          role="alert"
+          style="display: none"
+        >
+          😟 Your score is quite low. We recommend considering additional
+          support or resources to improve your mental wellness.
+        </div>
+      </div>
+
+      <script>
+        const questions = [
+          {
+            q: "Rate your level of physical activity on a scale of 1-10.",
+            type: "scale",
+          },
+          {
+            q: "How connected do you feel to your community or social support network? Rate on a scale of 1-10",
+            type: "scale",
+          },
+          {
+            q: "How often do you experience feelings of gratitude on a scale of 1-10?",
+            type: "scale",
+          },
+          {
+            q: "On a scale of 1-10, how would you rate your overall mood today?",
+            type: "scale",
+          },
+          {
+            q: "How often do you engage in activities that promote relaxation?",
+            type: "scale",
+          },
+          {
+            q: "How well do you manage your time and prioritize tasks on a scale of 1-10?",
+            type: "scale",
+          },
+          {
+            q: "Are you generally optimistic about the future?",
+            type: "choice",
+            choices: ["Yes, very much", "Occasionally", "Rarely", "Not at all"],
+          },
+          {
+            q: "Rate your overall level of stress on a scale of 1-10.",
+            type: "scale",
+          },
+          {
+            q: "Rate your level of optimism about the future on a scale of 1-10.",
+            type: "scale",
+          },
+          {
+            q: "How satisfied are you with your current relationships on a scale of 1-10?",
+            type: "scale",
+          },
+        ];
+
+        let current = 0;
+        let totalScore = 0;
+
+        function loadQuestion() {
+          if (current >= questions.length) return showResult();
+
+          document.getElementById("questionNum").innerText = `Question ${
+            current + 1
+          } of ${questions.length}`;
+          const q = questions[current];
+          document.getElementById("questionText").innerText = q.q;
+
+          const optionsContainer = document.getElementById("optionsContainer");
+          optionsContainer.innerHTML = "";
+
+          if (q.type === "scale") {
+            for (let i = 1; i <= 10; i++) {
+              const btn = document.createElement("button");
+              btn.innerText = i;
+              btn.className = "btn btn-outline-primary btn-scale";
+              btn.onclick = () => {
+                totalScore += i;
+                nextQuestion();
+              };
+              optionsContainer.appendChild(btn);
+            }
+          } else if (q.type === "choice") {
+            q.choices.forEach((choice, index) => {
+              const btn = document.createElement("button");
+              btn.innerText = choice;
+              btn.className = "btn btn-outline-secondary d-block w-100 my-2";
+              btn.onclick = () => {
+                totalScore +=
+                  index === 0 ? 10 : index === 1 ? 7 : index === 2 ? 3 : 0;
+                nextQuestion();
+              };
+              optionsContainer.appendChild(btn);
+            });
+          }
+
+          updateProgress();
+        }
+
+        function nextQuestion() {
+          current++;
+          loadQuestion();
+        }
+
+        function updateProgress() {
+          const percent = Math.round((current / questions.length) * 100);
+          const circular = document.getElementById("circularProgress");
+          const span = document.getElementById("progressPercent");
+          circular.style.background = `conic-gradient(#cc4c9b ${percent}%, #e5e5e5 ${percent}%)`;
+          span.innerText = `${percent}%`;
+        }
+
+        function showResult() {
+          document.querySelector(".question-box").innerHTML = `
+      <h3 class="text-center mb-3">Your Total Happiness Score:</h3>
+      <h1 class="text-center text-success mb-3">${totalScore} / 100</h1>
+      <p class="text-center fs-5 mb-4">${
+        totalScore >= 80
+          ? "😊 You're doing great! Keep it up!"
+          : totalScore >= 50
+          ? "😌 You're doing okay, consider more self-care."
+          : "😟 Let's try to improve your mental wellness. Reach out if needed."
+      }</p>
+    `;
+          updateProgress(); // Final update
+
+          // Show or hide the Bootstrap alert for low score
+          const messageBox = document.getElementById("low-score-message");
+          if (totalScore < 35) {
+            messageBox.style.display = "block";
+          } else {
+            messageBox.style.display = "none";
+          }
+        }
+
+        window.onload = loadQuestion;
+      </script>
+    </div>
+  </body>
+</html>

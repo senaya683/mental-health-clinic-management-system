@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happiness Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        background-color: #fff;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .calculator-heading {
+        color: #d14d8b;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .calculator-subtext {
+        color: #555;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 40px;
+      }
+
+      .pink-badge {
+        background-color: #d14d8b;
+        color: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .survey-box {
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .get-started-btn {
+        background-color: #d14d8b;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: bold;
+        border: none;
+      }
+
+      .circle-progress {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 8px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        position: relative;
+      }
+
+      .circle-progress::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border-right: 8px solid #d14d8b;
+        border-top: 8px solid transparent;
+        transform: rotate(20deg); /* Simulated partial progress */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="me-2"
+          />
+          Balance Buddy
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark" href="#">Mind Gym</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark" href="#">Contact</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-2">
+            <a href="login.html" class="btn btn-primary fw-bold rounded"
+              >Login</a
+            >
+            <select class="form-select form-select-sm" style="width: auto">
+              <option selected>English</option>
+              <option>සිංහල</option>
+              <option>தமிழ்</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="container my-5">
+      <h2 class="calculator-heading">Happiness Calculator</h2>
+      <p class="calculator-subtext">
+        Discover your happiness level with our interactive Happiness Calculator!
+        Take a few minutes to answer our questions and gain insights into your
+        well-being today.
+      </p>
+    </div>
+  <!-- Right side: Image -->
+      <div class="col-md-6 text-center">
+        <img src="https://www.mindheals.org/theme/img/calculator/all-questions-pic.png" alt="Happiness Image" class="img-fluid rounded" />
+      </div>
+    </div>
+  </div>
+
+   
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <!-- Left Side -->
+        <div class="col-md-7 survey-box">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="pink-badge">10</div>
+            <h5 class="m-0">Happiness Calculator</h5>
+          </div>
+          <h4 class="mb-3 text-primary fw-bold">How It Works</h4>
+          <p>
+            Our "Happiness Calculator" is your key to unlocking a happier you!
+            Answer a few questions about yourself, your feelings, preferences,
+            and experiences, and discover your unique happiness level.
+            <br /><br />
+            Get personalized recommendations to boost your well-being and start
+            living your best life today!
+          </p>
+          <button class="get-started-btn mt-3">Let’s Get Started</button>
+        </div>
+
+          <!-- Right Section -->
+        <div class="col-md-5">
+          <div class="survey-box text-center">
+            <h6 class="text-muted mb-3">YOUR PROGRESS</h6>
+            <div class="circle-progress">
+              <div>Survey not<br />Started</div>
+            </div>
+            <p class="mt-4 mb-2 text-muted">
+              If You Need Immediate Help, Call Us
+            </p>
+            <h5 class="text-primary fw-bold">+94 7131 20740</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

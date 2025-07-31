@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Experts - Balance Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Vertical gentle floating animation */
+      @keyframes floatUpDown {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+      .float-animation {
+        animation: floatUpDown 6s ease-in-out infinite;
+      }
+      /* Add slight delay for each card for staggered effect */
+      .delay-0 {
+        animation-delay: 0s;
+      }
+      .delay-1 {
+        animation-delay: 1.2s;
+      }
+      .delay-2 {
+        animation-delay: 2.4s;
+      }
+      .delay-3 {
+        animation-delay: 3.6s;
+      }
+      .delay-4 {
+        animation-delay: 4.8s;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-12 h-12 mr-3 rounded-full shadow-sm"
+            />
+            <span class="text-2xl font-semibold tracking-wide text-pink-600"
+              >Balance Buddy</span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div
+            class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
+          >
+            <a href="about.html" class="transition hover:text-pink-400"
+              >About Us</a
+            >
+            <a href="experts.html" class="transition hover:text-pink-400"
+              >Our Experts</a
+            >
+            <a href="services.html" class="transition hover:text-pink-400"
+              >Services</a
+            >
+            <a href="mindgym.html" class="transition hover:text-pink-400"
+              >Mind Gym</a
+            >
+            <a href="team.html" class="transition hover:text-pink-400"
+              >Join Our Team</a
+            >
+            <a href="contact.html" class="transition hover:text-pink-400"
+              >Contact</a
+            >
+            <a
+              href="login.html"
+              class="px-5 py-2 font-semibold text-white transition rounded-full"
+              style="background-color: #017b92"
+            >
+              Login
+            </a>
+            <!-- Language Selector -->
+            <select
+              class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
+            >
+              <option>English</option>
+              <option>සිංහල</option>
+              <option>தமிழ்</option>
+            </select>
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <button
+            id="menu-toggle"
+            class="text-pink-600 md:hidden focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+        <div class="flex flex-col space-y-3 font-medium text-pink-600">
+          <a href="about.html" class="hover:text-pink-400">About Us</a>
+          <a href="experts.html" class="hover:text-pink-400">Our Experts</a>
+          <a href="services.html" class="hover:text-pink-400">Services</a>
+          <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
+          <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
+          <a href="contact.html" class="hover:text-pink-400">Contact</a>
+          <a
+            href="login.html"
+            class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
+          >
+            Login
+          </a>
+          <select
+            class="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+          >
+            <option>English</option>
+            <option>සිංහල</option>
+            <option>தமிழ்</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-6 py-12 mx-auto max-w-7xl sm:px-8 lg:px-10">
+      <h1 class="mb-10 text-4xl font-bold text-center text-blue-700">
+        Meet Our Experts
+      </h1>
+
+      <div
+        class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+        <!-- Profile 1 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/11.jpg"
+            alt="Mrs. Rasini Bandara"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Mrs. Rasini Bandara
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Counseling Psychologist</p>
+          <p class="mb-4 text-sm text-gray-600">
+            A Counseling Psychologist well experienced in coaching for
+            personality development, motivation, personal grooming, and social
+            relationships.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Master's Degree in Applied Psychology – Coventry University
+                (2017–2018)
+              </li>
+              <li>
+                Bachelor's Degree in Psychology – Girne American University
+                (2012–2015)
+              </li>
+              <li>
+                Advanced Diploma in Counseling Psychology – Metropolitan College
+                (2009–2010)
+              </li>
+              <li>
+                Diploma in Psychology – London School of Science and Technology
+                (2007–2008)
+              </li>
+              <li>
+                Postgraduate Diploma in International Relations – Sri Lanka
+                Foundation Institute
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Personality Development</li>
+              <li>Motivation & Personal Grooming</li>
+              <li>Social Relationship Coaching</li>
+              <li>Self-Esteem Building</li>
+              <li>Behavioral Counseling</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">Languages: සිංහල, English</p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mrs. Rasini Bandara via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mrs. Rasini Bandara...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/50.jpg"
+            alt="Dr. Ayesha Perera"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Dr. Ayesha Perera
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Clinical Psychologist</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Experienced clinical psychologist specializing in anxiety,
+            depression, and trauma recovery.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Master of Psychology (Clinical) – University of Melbourne,
+                Australia (2015–2017)
+              </li>
+              <li>
+                BSc in Psychology (Hons) – University of Sri Jayewardenepura
+                (2011–2015)
+              </li>
+              <li>
+                Postgraduate Certificate in Cognitive Behavioral Therapy – Beck
+                Institute, USA (2018)
+              </li>
+              <li>
+                Certified Trauma Specialist – International Society for
+                Traumatic Stress Studies (2020)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Anxiety and Depression</li>
+              <li>Trauma Recovery</li>
+              <li>Mindfulness and Cognitive Behavioral Therapy</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Dr. Ayesha Perera via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Dr. Ayesha Perera...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 3 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/men/44.jpg"
+            alt="Mr. Kasun Jayawardena"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Mr. Kasun Jayawardena
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Skilled addiction counselor helping clients overcome substance abuse
+            and behavioral addictions.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Advanced Diploma in Addiction Counseling – Open University of
+                Sri Lanka (2016–2017)
+              </li>
+              <li>
+                Bachelor of Social Sciences – University of Colombo (2012–2016)
+              </li>
+              <li>
+                Certified Alcohol and Drug Counselor (CADC) – NAADAC, USA (2019)
+              </li>
+              <li>
+                Certificate in Motivational Interviewing – British Psychological
+                Society (2021)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Substance Abuse Recovery</li>
+              <li>Behavioral Addictions</li>
+              <li>Motivational Interviewing and Relapse Prevention</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English, Tamil
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mr. Kasun Jayawardena via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mr. Kasun Jayawardena...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 4 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://th.bing.com/th/id/R.50ba3263bb03851ffb7e816ed44f91bd?rik=cS3WYcTdV1S%2fzw&pid=ImgRaw&r=0"
+            alt="Mr. Kasun Jayawardena"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Dr. Michael Brown
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Skilled addiction counselor helping clients overcome substance abuse
+            and behavioral addictions.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Advanced Diploma in Addiction Counseling – Open University of
+                Sri Lanka (2016–2017)
+              </li>
+              <li>
+                Bachelor of Social Sciences – University of Colombo (2012–2016)
+              </li>
+              <li>
+                Certified Alcohol and Drug Counselor (CADC) – NAADAC, USA (2019)
+              </li>
+              <li>
+                Certificate in Motivational Interviewing – British Psychological
+                Society (2021)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Substance Abuse Recovery</li>
+              <li>Behavioral Addictions</li>
+              <li>Motivational Interviewing and Relapse Prevention</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English, Tamil
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mr. Kasun Jayawardena via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mr. Kasun Jayawardena...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 5 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/250px-Scarlett_Johansson-8588.jpg"
+          alt=" Ms. scarlett johansson" " class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full" />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Ms. scarlett johansson
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Skilled addiction counselor helping clients overcome substance abuse
+            and behavioral addictions.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Advanced Diploma in Addiction Counseling – Open University of
+                Sri Lanka (2016–2017)
+              </li>
+              <li>
+                Bachelor of Social Sciences – University of Colombo (2012–2016)
+              </li>
+              <li>
+                Certified Alcohol and Drug Counselor (CADC) – NAADAC, USA (2019)
+              </li>
+              <li>
+                Certificate in Motivational Interviewing – British Psychological
+                Society (2021)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Substance Abuse Recovery</li>
+              <li>Behavioral Addictions</li>
+              <li>Motivational Interviewing and Relapse Prevention</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English, Tamil
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mr. Kasun Jayawardena via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mr. Kasun Jayawardena...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 6 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/men/12.jpg"
+            alt="Mr. Alex Turner
+"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Mr. Alex Turner
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Skilled addiction counselor helping clients overcome substance abuse
+            and behavioral addictions.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Advanced Diploma in Addiction Counseling – Open University of
+                Sri Lanka (2016–2017)
+              </li>
+              <li>
+                Bachelor of Social Sciences – University of Colombo (2012–2016)
+              </li>
+              <li>
+                Certified Alcohol and Drug Counselor (CADC) – NAADAC, USA (2019)
+              </li>
+              <li>
+                Certificate in Motivational Interviewing – British Psychological
+                Society (2021)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Substance Abuse Recovery</li>
+              <li>Behavioral Addictions</li>
+              <li>Motivational Interviewing and Relapse Prevention</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English, Tamil
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mr. Kasun Jayawardena via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mr. Kasun Jayawardena...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 7 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/22.jpg"
+            alt="Ms. Laura White"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Ms. Laura White
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Skilled addiction counselor helping clients overcome substance abuse
+            and behavioral addictions.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Advanced Diploma in Addiction Counseling – Open University of
+                Sri Lanka (2016–2017)
+              </li>
+              <li>
+                Bachelor of Social Sciences – University of Colombo (2012–2016)
+              </li>
+              <li>
+                Certified Alcohol and Drug Counselor (CADC) – NAADAC, USA (2019)
+              </li>
+              <li>
+                Certificate in Motivational Interviewing – British Psychological
+                Society (2021)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Substance Abuse Recovery</li>
+              <li>Behavioral Addictions</li>
+              <li>Motivational Interviewing and Relapse Prevention</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English, Tamil
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mr. Kasun Jayawardena via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mr. Kasun Jayawardena...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 8 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/men/42.jpg"
+            alt="Dr. David Kim
+"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">
+            Dr. David Kim
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Skilled addiction counselor helping clients overcome substance abuse
+            and behavioral addictions.
+          </p>
+
+          <div class="w-full mt-2 text-left">
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>
+                Advanced Diploma in Addiction Counseling – Open University of
+                Sri Lanka (2016–2017)
+              </li>
+              <li>
+                Bachelor of Social Sciences – University of Colombo (2012–2016)
+              </li>
+              <li>
+                Certified Alcohol and Drug Counselor (CADC) – NAADAC, USA (2019)
+              </li>
+              <li>
+                Certificate in Motivational Interviewing – British Psychological
+                Society (2021)
+              </li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Specializations
+            </h3>
+            <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+              <li>Substance Abuse Recovery</li>
+              <li>Behavioral Addictions</li>
+              <li>Motivational Interviewing and Relapse Prevention</li>
+            </ul>
+
+            <h3 class="mb-1 text-sm font-semibold text-gray-700">
+              Communication
+            </h3>
+            <p class="mb-1 text-sm text-gray-600">
+              Languages: Sinhala, English, Tamil
+            </p>
+            <p class="mb-2 text-sm text-gray-600">
+              Methods: Phone, Video Call, In-Person
+            </p>
+          </div>
+
+          <div class="flex space-x-4">
+            <button
+              class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+              onclick="alert('Contact Mr. Kasun Jayawardena via email or phone.')"
+            >
+              Confirm
+            </button>
+            <button
+              class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+              onclick="alert('Loading more about Mr. Kasun Jayawardena...')"
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile 9 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-3"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/women/55.jpg"
+            alt="Ms. Rachel Adams"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700">
+            Ms. Rachel Adams
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Grief Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Provides support for loss and bereavement.
+          </p>
+          <button
+            class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+            onclick="alert('Contact Ms. Rachel Adams via email or phone.')"
+          >
+            Confirm
+          </button>
+        </div>
+
+        <!-- Profile 10 -->
+        <div
+          class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-2xl float-animation delay-4"
+        >
+          <img
+            src="https://randomuser.me/api/portraits/men/72.jpg"
+            alt="Mr. Brian Clark"
+            class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full"
+          />
+          <h2 class="mb-1 text-xl font-semibold text-blue-700">
+            Mr. Brian Clark
+          </h2>
+          <p class="mb-2 font-medium text-blue-500">Addiction Counselor</p>
+          <p class="mb-4 text-sm text-gray-600">
+            Helps clients with substance abuse recovery.
+          </p>
+          <button
+            class="px-5 py-2 text-white transition bg-blue-400 rounded-full shadow-md hover:bg-blue-500"
+            onclick="alert('Contact Mr. Brian Clark via email or phone.')"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="pt-10 pb-6 text-gray-800 bg-pink-100">
+      <div class="grid grid-cols-1 gap-8 px-6 mx-auto max-w-7xl md:grid-cols-3">
+        <!-- Logo & Description -->
+        <div>
+          <div class="flex items-center mb-4 space-x-3">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-10 h-10"
+            />
+            <span class="text-2xl font-bold text-pink-600">BALANCE BUDDY</span>
+          </div>
+          <p class="text-sm italic leading-relaxed text-gray-600">
+            Balance Buddy is a social service-oriented mental health platform
+            based in Sri Lanka, offering convenient, confidential, and
+            accessible care from licensed professionals across various
+            specialties.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-semibold text-pink-700">Contact Us</h3>
+          <p>
+            <strong>Hotline number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 696 2222</span
+            >
+          </p>
+          <p>
+            <strong>WhatsApp number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 312 0740</span
+            >
+          </p>
+          <p>
+            <strong>Email:</strong> <br /><a
+              href="mailto:info@balancebuddy.org"
+              class="font-semibold text-blue-900"
+              >info@balancebuddy.org</a
+            >
+          </p>
+        </div>
+
+        <!-- Links & Socials -->
+        <div class="flex flex-col justify-between">
+          <div class="flex mb-4 space-x-4">
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <div class="flex space-x-6 text-sm text-gray-700">
+            <a href="#" class="hover:text-pink-600">Terms & Conditions</a>
+            <a href="#" class="hover:text-pink-600">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-6 text-sm text-center text-gray-600">
+        © 2025 BalanceBuddy.org. All rights reserved. Design by EWD
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <div class="fixed bottom-6 right-6">
+        <a
+          href="#"
+          class="p-3 text-white transition bg-pink-500 rounded-full shadow hover:bg-pink-600"
+        >
+          ↑
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

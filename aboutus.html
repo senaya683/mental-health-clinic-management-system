@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Balance Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      @keyframes waveHand {
+        0% {
+          transform: rotate(0deg);
+        }
+        15% {
+          transform: rotate(14deg);
+        }
+        30% {
+          transform: rotate(-8deg);
+        }
+        40% {
+          transform: rotate(14deg);
+        }
+        50% {
+          transform: rotate(-4deg);
+        }
+        60% {
+          transform: rotate(10deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      .wave {
+        display: inline-block;
+        transform-origin: 70% 70%;
+        animation: waveHand 2.5s infinite;
+      }
+    </style>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-12 h-12 mr-3 rounded-full shadow-sm"
+            />
+            <span class="text-2xl font-semibold tracking-wide text-pink-600"
+              >Balance Buddy</span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div
+            class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
+          >
+            <a href="aboutus.html" class="transition hover:text-pink-400"
+              >About Us</a
+            >
+            <a href="ourexperts.html" class="transition hover:text-pink-400"
+              >Our Experts</a
+            >
+            <a href="services.html" class="transition hover:text-pink-400"
+              >Services</a
+            >
+            <a href="mindgym.html" class="transition hover:text-pink-400"
+              >Mind Gym</a
+            >
+            <a
+              href="counselorregistration.html"
+              class="transition hover:text-pink-400"
+              >Join Our Team</a
+            >
+            <a href="contact.html" class="transition hover:text-pink-400"
+              >Contact</a
+            >
+            <a
+              href="login.html"
+              class="px-5 py-2 font-semibold text-white transition rounded-full"
+              style="background-color: #017b92"
+            >
+              Login
+            </a>
+            <!-- Language Selector -->
+            <select
+              class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
+            >
+              <option>English</option>
+              <option>සිංහල</option>
+              <option>தமிழ்</option>
+            </select>
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <button
+            id="menu-toggle"
+            class="text-pink-600 md:hidden focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+        <div class="flex flex-col space-y-3 font-medium text-pink-600">
+          <a href="about.html" class="hover:text-pink-400">About Us</a>
+          <a href="experts.html" class="hover:text-pink-400">Our Experts</a>
+          <a href="services.html" class="hover:text-pink-400">Services</a>
+          <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
+          <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
+          <a href="contact.html" class="hover:text-pink-400">Contact</a>
+          <a
+            href="login.html"
+            class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
+          >
+            Login
+          </a>
+          <select
+            class="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+          >
+            <option>English</option>
+            <option>සිංහල</option>
+            <option>தமிழ்</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Medium Top Image Banner -->
+    <div class="flex justify-center px-4 mt-10 mb-6">
+      <img
+        src="https://www.mindheals.org/theme/img/covers/aboutUs.jpg"
+        alt="About Us Banner"
+        class="w-[400px] h-[300px] rounded-lg shadow-lg object-cover"
+      />
+    </div>
+    <!-- About Us Section -->
+    <section class="px-6 py-12 text-center bg-blue-50" data-aos="fade-up">
+      <h2 class="mb-4 text-4xl font-bold text-pink-600" data-aos="fade-down">
+        About us
+      </h2>
+      <h3
+        class="mb-8 text-2xl font-semibold text-cyan-900"
+        data-aos="fade-right"
+      >
+        Here’s Our Story
+      </h3>
+
+      <div
+        class="max-w-4xl mx-auto space-y-6 leading-relaxed text-justify text-gray-700"
+      >
+        <p>
+          Balance Buddy is a leading mental health organization in Sri Lanka,
+          dedicated to supporting emotional and psychological well-being through
+          compassionate and accessible services. As pioneers in online
+          counseling within the country, we offer secure and confidential
+          therapy via messaging, voice, and video sessions—empowering clients to
+          seek help comfortably from their homes.
+        </p>
+        <p>
+          Our clinic is backed by a team of certified and experienced mental
+          health professionals who specialize in a wide range of therapeutic
+          approaches. With decades of combined expertise, our counselors are
+          equipped to help individuals navigate stress, anxiety, trauma,
+          relationship issues, and other personal challenges. We are committed
+          to creating a safe space where people of all backgrounds feel heard,
+          understood, and supported on their healing journey.
+        </p>
+        <p>
+          Beyond individual care, we also provide tailored solutions for
+          organizations and institutions, including psychological assessments,
+          mental wellness training, and workplace counseling programs. Our
+          mission is to enhance mental health awareness, foster emotional
+          resilience, and contribute to building a healthier, more compassionate
+          community—one conversation at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="px-6 py-12 bg-blue-100">
+      <div
+        class="grid items-start max-w-6xl grid-cols-1 gap-10 mx-auto md:grid-cols-2"
+      >
+        <!-- Vision -->
+        <div
+          class="bg-[#005B79] text-white rounded-xl p-8 shadow-lg text-center"
+          data-aos="zoom-in-right"
+        >
+          <h2 class="mb-6 text-3xl font-semibold">Our Vision</h2>
+          <p class="text-lg leading-relaxed">
+            Mind Heals envisions in becoming the most trusted and valued mental
+            health care platform in Sri Lanka.
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div data-aos="zoom-in-left">
+          <h2 class="mb-4 text-3xl font-semibold text-cyan-900">Our Mission</h2>
+          <p class="mb-4 leading-relaxed text-gray-700">
+            Mind Heals aims to deliver mental health support services through
+            qualified and experienced mental health professionals in Sri Lanka
+            whilst maintaining accurate quality standards and ethical
+            principles.
+          </p>
+          <p class="mb-2 font-medium text-gray-800">We aim to:</p>
+          <ol class="space-y-2 text-gray-700 list-decimal list-inside">
+            <li>To make mental health care...</li>
+            <li>To provide an easily accessible platform...</li>
+            <li>To enhance mental health awareness...</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="pt-10 pb-6 text-gray-800 bg-pink-100">
+      <div class="grid grid-cols-1 gap-8 px-6 mx-auto max-w-7xl md:grid-cols-3">
+        <!-- Logo & Description -->
+        <div>
+          <div class="flex items-center mb-4 space-x-3">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-10 h-10"
+            />
+            <span class="text-2xl font-bold text-pink-600">BALANCE BUDDY</span>
+          </div>
+          <p class="text-sm italic leading-relaxed text-gray-600">
+            Balance Buddy is a social service-oriented mental health platform
+            based in Sri Lanka, offering convenient, confidential, and
+            accessible care from licensed professionals across various
+            specialties.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-semibold text-pink-700">Contact Us</h3>
+          <p>
+            <strong>Hotline number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 696 2222</span
+            >
+          </p>
+          <p>
+            <strong>WhatsApp number:</strong> <br /><span
+              class="font-semibold text-blue-900"
+              >071 312 0740</span
+            >
+          </p>
+          <p>
+            <strong>Email:</strong> <br /><a
+              href="mailto:info@balancebuddy.org"
+              class="font-semibold text-blue-900"
+              >info@balancebuddy.org</a
+            >
+          </p>
+        </div>
+
+        <!-- Links & Socials -->
+        <div class="flex flex-col justify-between">
+          <div class="flex mb-4 space-x-4">
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl text-blue-800 hover:text-pink-500"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <div class="flex space-x-6 text-sm text-gray-700">
+            <a href="#" class="hover:text-pink-600">Terms & Conditions</a>
+            <a href="#" class="hover:text-pink-600">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-6 text-sm text-center text-gray-600">
+        © 2025 BalanceBuddy.org. All rights reserved. Design by EWD
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <div class="fixed bottom-6 right-6">
+        <a
+          href="#"
+          class="p-3 text-white transition bg-pink-500 rounded-full shadow hover:bg-pink-600"
+        >
+          ↑
+        </a>
+      </div>
+    </footer>
+
+    <!-- JS for Mobile Menu -->
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+    </script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

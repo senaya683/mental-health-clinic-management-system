@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Experts - Balance Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+              alt="Logo"
+              class="w-12 h-12 mr-3 rounded-full shadow-sm"
+            />
+            <span class="text-2xl font-semibold tracking-wide text-pink-600"
+              >Balance Buddy</span
+            >
+          </a>
+
+          <!-- Desktop Menu -->
+          <div
+            class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
+          >
+            <a href="about.html" class="transition hover:text-pink-400"
+              >About Us</a
+            >
+            <a href="experts.html" class="transition hover:text-pink-400"
+              >Our Experts</a
+            >
+            <a href="services.html" class="transition hover:text-pink-400"
+              >Services</a
+            >
+            <a href="mindgym.html" class="transition hover:text-pink-400"
+              >Mind Gym</a
+            >
+            <a href="team.html" class="transition hover:text-pink-400"
+              >Join Our Team</a
+            >
+            <a href="contact.html" class="transition hover:text-pink-400"
+              >Contact</a
+            >
+            <a
+              href="login.html"
+              class="px-5 py-2 font-semibold text-white transition rounded-full"
+              style="background-color: #017b92"
+            >
+              Login
+            </a>
+            <!-- Language Selector -->
+            <select
+              class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
+            >
+              <option>English</option>
+              <option>සිංහල</option>
+              <option>தமிழ்</option>
+            </select>
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <button
+            id="menu-toggle"
+            class="text-pink-600 md:hidden focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+        <div class="flex flex-col space-y-3 font-medium text-pink-600">
+          <a href="about.html" class="hover:text-pink-400">About Us</a>
+          <a href="experts.html" class="hover:text-pink-400">Our Experts</a>
+          <a href="services.html" class="hover:text-pink-400">Services</a>
+          <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
+          <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
+          <a href="contact.html" class="hover:text-pink-400">Contact</a>
+          <a
+            href="login.html"
+            class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
+          >
+            Login
+          </a>
+          <select
+            class="w-full px-2 py-1 text-sm border border-gray-300 rounded"
+          >
+            <option>English</option>
+            <option>සිංහල</option>
+            <option>தமிழ்</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Request Appointment - Balance Buddy</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body class="p-6 font-sans bg-blue-50">
+        <div class="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-3">
+          <!-- Appointment Form -->
+          <div class="p-6 bg-white shadow-lg md:col-span-2 rounded-xl">
+            <h2 class="mb-4 text-2xl font-bold text-blue-700">
+              Request Appointment
+            </h2>
+
+            <div class="mb-6">
+              <p class="font-semibold text-blue-600">
+                1. Fill The Appointment Form
+              </p>
+              <p class="font-semibold text-blue-600">2. Make Payment</p>
+            </div>
+
+            <!-- Appointment Details -->
+            <div class="mb-6">
+              <h3 class="mb-2 text-lg font-semibold text-blue-700">
+                Appointment Details
+              </h3>
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Select Preferred Medium</label
+              >
+              <div class="mb-3 space-y-2">
+                <label class="block"
+                  ><input type="radio" name="medium" class="mr-2" />Non-video
+                  (Audio) Consultation</label
+                >
+                <label class="block"
+                  ><input type="radio" name="medium" class="mr-2" />Video
+                  Consultation</label
+                >
+                <label class="block"
+                  ><input type="radio" name="medium" class="mr-2" />In Person
+                  Consultation</label
+                >
+              </div>
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Select Preferred Language</label
+              >
+              <select class="w-full p-2 mb-3 border rounded">
+                <option>සිංහල</option>
+                <option>English</option>
+              </select>
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Select all that applies*</label
+              >
+              <div class="grid grid-cols-2 gap-2 mb-3 text-sm text-gray-700">
+                <label
+                  ><input type="checkbox" class="mr-1" />Individual Guidance/
+                  Therapy</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Couples Guidance</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Guidance for
+                  Children</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Motivational
+                  Coaching</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Therapy for
+                  Elderly</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Career Guidance</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Personality
+                  Development</label
+                >
+                <label
+                  ><input type="checkbox" class="mr-1" />Personality
+                  Assessment</label
+                >
+              </div>
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Preferred Date & Time Slot*</label
+              >
+              <input
+                type="datetime-local"
+                class="w-full p-2 mb-2 border rounded"
+              />
+              <p class="mb-4 text-xs text-gray-500">
+                Please kindly note that our counselors are available on request
+                basis. Therefore, the date and time slot may slightly differ. A
+                team administrator will contact you for alternatives if needed.
+              </p>
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Duration*</label
+              >
+              <select class="w-full p-2 mb-6 border rounded">
+                <option>Select</option>
+                <option>30 minutes</option>
+                <option>1 hour</option>
+              </select>
+            </div>
+
+            <!-- Customer Details -->
+            <div>
+              <h3 class="mb-2 text-lg font-semibold text-blue-700">
+                Customer Details
+              </h3>
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Customer Type</label
+              >
+              <div class="mb-3">
+                <label class="mr-4"
+                  ><input
+                    type="radio"
+                    name="type"
+                    class="mr-1"
+                  />Personal</label
+                >
+                <label
+                  ><input type="radio" name="type" class="mr-1" />Corporate
+                  Sponsored</label
+                >
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block mb-1 text-sm font-medium text-gray-700"
+                    >Title*</label
+                  >
+                  <select class="w-full p-2 mb-2 border rounded">
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Ms</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block mb-1 text-sm font-medium text-gray-700"
+                    >NIC Number*</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full p-2 border rounded"
+                    placeholder="Enter your NIC"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 mt-3">
+                <div>
+                  <label class="block mb-1 text-sm font-medium text-gray-700"
+                    >First Name*</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full p-2 border rounded"
+                    placeholder="Enter your first name"
+                  />
+                </div>
+                <div>
+                  <label class="block mb-1 text-sm font-medium text-gray-700"
+                    >Last Name*</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full p-2 border rounded"
+                    placeholder="Enter your last name"
+                  />
+                </div>
+              </div>
+
+              <label class="block mt-3 mb-1 text-sm font-medium text-gray-700"
+                >Email*</label
+              >
+              <input
+                type="email"
+                class="w-full p-2 mb-3 border rounded"
+                placeholder="Enter your email"
+              />
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Phone Number*</label
+              >
+              <input
+                type="tel"
+                class="w-full p-2 mb-3 border rounded"
+                placeholder="Enter your phone number"
+              />
+
+              <label class="block mb-1 text-sm font-medium text-gray-700"
+                >Display Name / Avatar Name</label
+              >
+              <input
+                type="text"
+                class="w-full p-2 mb-4 border rounded"
+                placeholder="Enter your display name"
+              />
+
+              <label class="flex items-center mb-6 text-sm">
+                <input type="checkbox" class="mr-2" />
+                By requesting this appointment, I agree to Mind Heals Terms &
+                Conditions.
+              </label>
+
+              <button
+                class="w-full py-3 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+
+        <!-- Profile 1 -->
+<div class="flex flex-col items-center max-w-lg p-6 mx-auto text-center bg-white shadow-md rounded-2xl float-animation delay-3">
+  <img
+    src="https://randomuser.me/api/portraits/women/11.jpg"
+    alt="Mrs. Rasini Bandara"
+    class="object-cover w-32 h-32 mb-4 border-4 border-blue-300 rounded-full shadow"
+  />
+
+  <h2 class="mb-1 text-xl font-semibold text-blue-700 uppercase">Mrs. Rasini Bandara</h2>
+  <p class="mb-2 font-medium text-blue-500">Counseling Psychologist</p>
+  <p class="mb-4 text-sm text-gray-600">
+    A Counseling Psychologist well experienced in coaching for personality development, motivation, personal grooming, and social relationships.
+  </p>
+
+  <!-- Education -->
+  <div class="w-full mt-2 text-left">
+    <h3 class="mb-1 text-sm font-semibold text-gray-700">Education</h3>
+    <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+      <li>Master's in Applied Psychology – Coventry University (2017–2018)</li>
+      <li>Bachelor's in Psychology – Girne American University (2012–2015)</li>
+      <li>Advanced Diploma in Counseling Psychology – Metropolitan College (2009–2010)</li>
+      <li>Diploma in Psychology – London School of Science and Technology (2007–2008)</li>
+      <li>Postgraduate Diploma in International Relations – SLFI</li>
+    </ul>
+
+    <!-- Specializations -->
+    <h3 class="mb-1 text-sm font-semibold text-gray-700">Specializations</h3>
+    <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+      <li>Personality Development</li>
+      <li>Motivation & Personal Grooming</li>
+      <li>Social Relationship Coaching</li>
+      <li>Self-Esteem Building</li>
+      <li>Behavioral Counseling</li>
+    </ul>
+
+    <!-- Communication -->
+    <h3 class="mb-1 text-sm font-semibold text-gray-700">Communication</h3>
+    <p class="mb-1 text-sm text-gray-600">Languages: සිංහල, English</p>
+    <p class="mb-4 text-sm text-gray-600">Methods: Phone, Video Call, In-Person</p>
+
+    <!-- Fee Information -->
+    <h3 class="mb-1 text-sm font-semibold text-gray-700">Fee Amount</h3>
+    <ul class="pl-4 mb-4 text-sm text-gray-600 list-disc">
+      <li>Online Session 1hr – LKR 5,500</li>
+      <li>In Person Session 1hr – LKR 6,500</li>
+    </ul>
+
+    <!-- Availability -->
+    <h3 class="mb-1 text-sm font-semibold text-gray-700">General Availability</h3>
+    <p class="mb-4 text-sm text-gray-600">No available time</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex space-x-4">
+    <button
+      class="px-5 py-2 text-white bg-blue-500 rounded-full shadow hover:bg-blue-600"
+      onclick="alert('Contact Mrs. Rasini Bandara via email or phone.')"
+    >
+      Payment
+    </button>
+    <button
+      class="px-5 py-2 text-blue-600 border border-blue-400 rounded-full hover:bg-blue-100"
+      onclick="alert('Loading more about Mrs. Rasini Bandara...')"
+    >
+      Read More
+    </button>
+  </div>
+</div>
+ 
+
+<!-- Font Awesome CDN for social icons -->
+<script
+  src="https://kit.fontawesome.com/a076d05399.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.querySelector("button").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Collect values
+    const medium = document.querySelector('input[name="medium"]:checked');
+    const language = document.querySelector("select").value;
+    const dateTime = document.querySelector('input[type="datetime-local"]').value;
+    const duration = document.querySelector('select:nth-of-type(2)').value;
+
+    const customerType = document.querySelector('input[name="type"]:checked');
+    const title = document.querySelector('select:nth-of-type(3)').value;
+    const nic = document.querySelector('input[placeholder="Enter your NIC"]').value.trim();
+    const firstName = document.querySelector('input[placeholder="Enter your first name"]').value.trim();
+    const lastName = document.querySelector('input[placeholder="Enter your last name"]').value.trim();
+    const email = document.querySelector('input[type="email"]').value.trim();
+    const phone = document.querySelector('input[type="tel"]').value.trim();
+    const agreement = document.querySelector('input[type="checkbox"]').checked;
+
+    // At least one checkbox validation
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:not([type="checkbox"]:last-of-type)');
+    const atLeastOneChecked = Array.from(checkboxes).some((cb) => cb.checked);
+
+    // Regex patterns
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const nicRegex = /^[0-9]{9}[vVxX]$|^[0-9]{12}$/;
+    const phoneRegex = /^07[0-9]{8}$/;
+
+    // Validation logic
+    let errors = [];
+
+    if (!medium) errors.push("Please select a preferred medium.");
+    if (!language) errors.push("Please select a language.");
+    if (!atLeastOneChecked) errors.push("Please select at least one purpose.");
+    if (!dateTime) errors.push("Please choose a preferred date and time.");
+    if (duration === "Select") errors.push("Please select a duration.");
+    if (!customerType) errors.push("Please select customer type.");
+    if (!title) errors.push("Please select a title.");
+    if (!nic || !nicRegex.test(nic)) errors.push("Please enter a valid NIC number.");
+    if (!firstName) errors.push("First name is required.");
+    if (!lastName) errors.push("Last name is required.");
+    if (!email || !emailRegex.test(email)) errors.push("Please enter a valid email.");
+    if (!phone || !phoneRegex.test(phone)) errors.push("Please enter a valid phone number (ex: 0701234567).");
+    if (!agreement) errors.push("You must agree to the Terms & Conditions.");
+
+    // Show errors or success
+    if (errors.length > 0) {
+      alert("Please fix the following:\n\n" + errors.join("\n"));
+    } else {
+      alert("Appointment request submitted successfully!");
+      // You can now submit the form data via fetch/ajax if needed
+    }
+  });
+</script>
+
+      </body>
+    </html>
+  </body>
+</html>

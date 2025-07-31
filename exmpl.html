@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Anne's Service Center - Premium Auto Services</title>
+    <!-- Tailwind CSS via CDN with custom colors -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'ocean': '#1c304dff',
+                    'sunset': '#f6ad55',
+                    'coral': '#c8ababff',
+                    'teal': '#478a87ff',
+                    'royal': '#6468b5ff'
+                }, // This closing brace was missing
+                fontFamily: {
+                    'sans': ['Poppins', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
+ 
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(76, 81, 191, 0.8) 100%);
+        }
+        .car-bg {
+            background-image: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .vehicle-card:hover .vehicle-img {
+            transform: scale(1.05);
+        }
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(246, 173, 85, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(246, 173, 85, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(246, 173, 85, 0); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-50">
+
+@include('partial.navbar')
+
+
+    <!-- Page Content -->
+    <main>
+        <!-- Hero Section with Parallax -->
+        <section class="relative flex items-center justify-center h-screen text-white car-bg">
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="container relative z-10 px-4 mx-auto text-center">
+                <h1 class="mb-6 text-5xl font-bold md:text-7xl animate-fadeIn">Revitalize Your Ride</h1>
+                <p class="max-w-3xl mx-auto mb-10 text-xl md:text-2xl">Premium auto care that keeps your vehicle running like new</p>
+                <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                    <a href="/services" class="px-8 py-4 text-lg font-bold transition-all duration-300 transform rounded-full shadow-lg bg-sunset hover:bg-coral text-ocean hover:scale-105">
+                        Explore Services
+                    </a>
+                    <a href="/contact" class="px-8 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:border-sunset hover:text-sunset hover:scale-105">
+                        Book Appointment
+                    </a>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <a href="#services" class="text-white hover:text-sunset">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section id="services" class="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
+            <div class="container px-4 mx-auto">
+                <div class="mb-16 text-center">
+                    <span class="font-bold text-teal">WHAT WE OFFER</span>
+                    <h2 class="mt-2 text-4xl font-bold text-ocean">Comprehensive Auto Services</h2>
+                    <div class="w-20 h-1 mx-auto mt-4 bg-sunset"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Service 1 -->
+                    <div class="overflow-hidden transition-all duration-500 bg-white shadow-lg service-card rounded-xl hover:shadow-xl">
+                        <div class="flex items-center justify-center h-48 bg-teal">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="mb-3 text-2xl font-bold text-ocean">Expert Maintenance</h3>
+                            <p class="mb-4 text-gray-600">Keep your vehicle in peak condition with our comprehensive maintenance packages tailored to your car's needs.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-teal" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Oil & Filter Changes
+                                </li>
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-teal" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Brake Inspections
+                                </li>
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-teal" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Tire Rotations
+                                </li>
+                            </ul>
+                            <a href="/services#maintenance" class="flex items-center font-bold text-teal hover:underline">
+                                Learn more
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="overflow-hidden transition-all duration-500 bg-white shadow-lg service-card rounded-xl hover:shadow-xl">
+                        <div class="flex items-center justify-center h-48 bg-royal">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="mb-3 text-2xl font-bold text-ocean">Body & Paint</h3>
+                            <p class="mb-4 text-gray-600">Restore your vehicle's appearance with our professional painting and bodywork services using premium materials.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-royal" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Scratch & Dent Repair
+                                </li>
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-royal" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Full Color Changes
+                                </li>
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-royal" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Ceramic Coating
+                                </li>
+                            </ul>
+                            <a href="/services#bodywork" class="flex items-center font-bold text-royal hover:underline">
+                                Learn more
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="overflow-hidden transition-all duration-500 bg-white shadow-lg service-card rounded-xl hover:shadow-xl">
+                        <div class="flex items-center justify-center h-48 bg-coral">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="mb-3 text-2xl font-bold text-ocean">Genuine Parts</h3>
+                            <p class="mb-4 text-gray-600">We stock only the highest quality OEM and aftermarket parts for all major vehicle makes and models.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-coral" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Engine Components
+                                </li>
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-coral" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Brake Systems
+                                </li>
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-coral" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    Suspension Parts
+                                </li>
+                            </ul>
+                            <a href="/parts" class="flex items-center font-bold text-coral hover:underline">
+                               Learn more
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-16 text-white bg-ocean">
+            <div class="container px-4 mx-auto">
+                <div class="grid grid-cols-1 gap-8 text-center md:grid-cols-3">
+                    <div class="p-6">
+                        <div class="mb-2 text-5xl font-bold text-sunset">2,500+</div>
+                        <div class="text-xl">Vehicles Serviced</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-2 text-5xl font-bold text-teal">98%</div>
+                        <div class="text-xl">Customer Satisfaction</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-2 text-5xl font-bold text-coral">15+</div>
+                        <div class="text-xl">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Vehicles -->
+        <section class="py-20 bg-white">
+            <div class="container px-4 mx-auto">
+                <div class="mb-16 text-center">
+                    <span class="font-bold text-sunset">OUR INVENTORY</span>
+                    <h2 class="mt-2 text-4xl font-bold text-ocean">Featured Vehicles</h2>
+                    <div class="w-20 h-1 mx-auto mt-4 bg-teal"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Vehicle 1 -->
+                    <div class="overflow-hidden transition-all duration-300 bg-white shadow-lg vehicle-card rounded-xl hover:shadow-xl">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Toyota Corolla" class="object-cover w-full h-64 transition-transform duration-500 vehicle-img">
+                            <div class="absolute px-3 py-1 text-sm font-bold text-white rounded-full top-4 right-4 bg-sunset">NEW</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-ocean">Toyota Corolla</h3>
+                                    <p class="text-gray-500">2023 Model</p>
+                                </div>
+                                <span class="px-3 py-1 text-sm font-bold text-white rounded-full bg-teal">$24,999</span>
+                            </div>
+                            <div class="flex justify-between mt-6">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">10K miles</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">Premium</span>
+                                </div>
+                            </div>
+                            <a href="/vehicles/1" class="block w-full py-3 mt-6 font-bold text-center text-white transition duration-300 rounded-lg bg-gradient-to-r from-sunset to-coral hover:opacity-90">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle 2 -->
+                    <div class="overflow-hidden transition-all duration-300 bg-white shadow-lg vehicle-card rounded-xl hover:shadow-xl">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ford Mustang" class="object-cover w-full h-64 transition-transform duration-500 vehicle-img">
+                            <div class="absolute px-3 py-1 text-sm font-bold text-white rounded-full top-4 right-4 bg-royal">POPULAR</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-ocean">Ford Mustang</h3>
+                                    <p class="text-gray-500">2022 GT Premium</p>
+                                </div>
+                                <span class="px-3 py-1 text-sm font-bold text-white rounded-full bg-royal">$39,999</span>
+                            </div>
+                            <div class="flex justify-between mt-6">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                            </svg>
+                                    <span class="text-sm text-gray-600">15K miles</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">Performance</span>
+                                </div>
+                            </div>
+                            <a href="/vehicles/2" class="block w-full py-3 mt-6 font-bold text-center text-white transition duration-300 rounded-lg bg-gradient-to-r from-royal to-teal hover:opacity-90">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle 3 -->
+                    <div class="overflow-hidden transition-all duration-300 bg-white shadow-lg vehicle-card rounded-xl hover:shadow-xl">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Honda CR-V" class="object-cover w-full h-64 transition-transform duration-500 vehicle-img">
+                            <div class="absolute px-3 py-1 text-sm font-bold text-white rounded-full top-4 right-4 bg-coral">LOW MILEAGE</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-ocean">Honda CR-V</h3>
+                                    <p class="text-gray-500">2021 EX-L</p>
+                                </div>
+                                <span class="px-3 py-1 text-sm font-bold text-white rounded-full bg-coral">$28,750</span>
+                            </div>
+                            <div class="flex justify-between mt-6">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">8K miles</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">Luxury</span>
+                                </div>
+                            </div>
+                            <a href="/vehicles/3" class="block w-full py-3 mt-6 font-bold text-center text-white transition duration-300 rounded-lg bg-gradient-to-r from-coral to-sunset hover:opacity-90">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="/vehicles" class="inline-block px-8 py-3 font-bold transition-all duration-300 border-2 rounded-full border-ocean text-ocean hover:bg-ocean hover:text-white">
+                        View All Vehicles
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!-- Testimonials -->
+<section class="py-20 bg-gray-100">
+    <div class="container px-4 mx-auto">
+        <div class="mb-16 text-center">
+            <span class="font-bold text-teal">CLIENT FEEDBACK</span>
+            <h2 class="mt-2 text-4xl font-bold text-ocean">What Our Customers Say</h2>
+            <div class="w-20 h-1 mx-auto mt-4 bg-sunset"></div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <!-- Testimonial 1 -->
+            <div class="p-8 bg-white shadow-lg rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="mr-2 text-2xl text-sunset">★★★★★</div>
+                </div>
+                <p class="mb-6 text-gray-600">"St. Anne's Auto provided excellent service when repairing my Toyota after the accident. Their attention to detail is remarkable and the pricing was very reasonable compared to other garages."</p>
+                <div class="flex items-center">
+                    <img src="/images/customer2.jpg" alt="Ravi Perera" class="object-cover w-12 h-12 mr-4 rounded-full">
+                    <div>
+                        <h4 class="font-bold text-ocean">Ravi Perera</h4>
+                        <p class="text-sm text-gray-500">Toyota Prius Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="p-8 bg-white shadow-lg rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="mr-2 text-2xl text-sunset">★★★★★</div>
+                </div>
+                <p class="mb-6 text-gray-600">"I've been servicing my vehicles at St. Anne's for years. They're honest, never recommend unnecessary repairs, and their work is always top quality. Highly recommended for any car owner."</p>
+                <div class="flex items-center">
+                    <img src="/images/customer4.jpg" alt="Nimali Fernando" class="object-cover w-12 h-12 mr-4 rounded-full">
+                    <div>
+                        <h4 class="font-bold text-ocean">Nimali Fernando</h4>
+                        <p class="text-sm text-gray-500">Honda Vezel Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="p-8 bg-white shadow-lg rounded-xl">
+                <div class="flex items-center mb-4">
+                    <div class="mr-2 text-2xl text-sunset">★★★★★</div>
+                </div>
+                <p class="mb-6 text-gray-600">"Bought my first car from St. Anne's Auto and the experience was wonderful. They explained everything clearly and gave me a fair price. The after-sales service has been exceptional too."</p>
+                <div class="flex items-center">
+                    <img src="/images/customer1.jpg" alt="Sanjaya Bandara" class="object-cover w-12 h-12 mr-4 rounded-full">
+                    <div>
+                        <h4 class="font-bold text-ocean">Sanjaya Bandara</h4>
+                        <p class="text-sm text-gray-500">Suzuki Wagon R Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+        <!-- CTA Section -->
+        <section class="py-20 text-white bg-gradient-to-r from-ocean to-royal">
+            <div class="container px-4 mx-auto text-center">
+                <h2 class="mb-6 text-4xl font-bold">Ready for Exceptional Auto Care?</h2>
+                <p class="max-w-2xl mx-auto mb-10 text-xl">Schedule your service appointment today and experience the St. Anne's difference.</p>
+                <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                    <a href="/contact" class="flex items-center justify-center px-8 py-4 text-lg font-bold transition-all duration-300 transform rounded-full shadow-lg bg-sunset hover:bg-white text-ocean hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        Contact Us
+                    </a>
+                    <a href="tel:+18005551234" class="flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:border-sunset hover:text-sunset hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        032-588888
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+
+    <!-- Floating Action Button -->
+    <div class="fixed z-50 bottom-8 right-8">
+        <a href="/contact" class="flex items-center justify-center w-16 h-16 text-white transition-colors duration-300 rounded-full shadow-xl floating-btn bg-sunset hover:bg-coral">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- Appointment Modal (hidden by default) -->
+    <div id="appointment-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+        <div class="relative w-full max-w-md p-8 mx-4 bg-white rounded-xl">
+            <button id="close-modal" class="absolute text-gray-500 top-4 right-4 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="mb-6 text-2xl font-bold text-ocean">Schedule an Appointment</h3>
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block mb-2 text-gray-700">Full Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 text-gray-700">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal">
+                </div>
+                <div class="mb-4">
+                    <label for="phone" class="block mb-2 text-gray-700">Phone</label>
+                    <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal">
+                </div>
+                <div class="mb-4">
+                    <label for="service" class="block mb-2 text-gray-700">Service Needed</label>
+                    <select id="service" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal">
+                        <option value="">Select a service</option>
+                        <option value="oil-change">Oil Change</option>
+                        <option value="tire-rotation">Tire Rotation</option>
+                        <option value="brake-service">Brake Service</option>
+                        <option value="engine-diagnostic">Engine Diagnostic</option>
+                        <option value="transmission">Transmission Service</option>
+                        <option value="bodywork">Body Work</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="date" class="block mb-2 text-gray-700">Preferred Date</label>
+                    <input type="date" id="date" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal">
+                </div>
+                <button type="submit" class="w-full py-3 font-bold text-white transition-colors duration-300 rounded-md bg-teal hover:bg-teal-700">
+                    Book Appointment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Modal functionality
+        const appointmentModal = document.getElementById('appointment-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        // Show modal (you would call this when clicking a "Book Appointment" button)
+        function showModal() {
+            appointmentModal.classList.remove('hidden');
+        }
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            appointmentModal.classList.add('hidden');
+        });
+        
+        // Close modal when clicking outside
+        appointmentModal.addEventListener('click', (e) => {
+            if (e.target === appointmentModal) {
+                appointmentModal.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+      @include('partial.footer')
+
+</body>
+</html>

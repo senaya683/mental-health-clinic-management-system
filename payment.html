@@ -82,7 +82,13 @@
         </div>
 
         <!-- Online Payment Form -->
-        <form id="paymentForm" class="space-y-5">
+        <form
+          id="paymentForm"
+          action="payment.php"
+          method="POST"
+          enctype="multipart/form-data"
+          class="space-y-5"
+        >
           <div id="onlinePaymentFields">
             <div>
               <label for="cardName" class="block mb-1 font-medium text-gray-700"

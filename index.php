@@ -1,150 +1,113 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Balance Buddy</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Balance Buddy</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    <style>
-      @keyframes slideLeftRight {
-        0% {
-          transform: translateX(0);
-        }
-        50% {
-          transform: translateX(30px);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-      .moving-image {
-        animation: slideLeftRight 3s ease-in-out infinite;
-        max-width: 200px;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
+  <style>
+    @keyframes slideLeftRight {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(30px); }
+      100% { transform: translateX(0); }
+    }
+    .moving-image {
+      animation: slideLeftRight 3s ease-in-out infinite;
+      max-width: 200px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="text-gray-800 bg-blue-100">
 
-  <body class="text-gray-800 bg-blue-100">
-    <?php include 'navbar.php'; ?>
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.php" class="flex items-center">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Logo" class="w-12 h-12 mr-3 rounded-full shadow-sm" />
+          <span class="text-2xl font-semibold tracking-wide text-pink-600">Balance Buddy</span>
+        </a>
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white shadow-md">
-      <?php include 'navbar.php'; ?>
-      <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <a href="index.html" class="flex items-center">
-            <img
-              src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
-              alt="Logo"
-              class="w-12 h-12 mr-3 rounded-full shadow-sm"
-            />
-            <span class="text-2xl font-semibold tracking-wide text-pink-600">
-              Balance Buddy
-            </span>
-          </a>
+        <!-- Desktop Menu -->
+        <div class="items-center hidden space-x-6 font-medium text-pink-600 md:flex">
+          <a href="about.html" class="transition hover:text-pink-400">About Us</a>
+          <a href="experts.html" class="transition hover:text-pink-400">Our Experts</a>
+          <a href="services.html" class="transition hover:text-pink-400">Services</a>
+          <a href="mindgym.html" class="transition hover:text-pink-400">Mind Gym</a>
+          <a href="team.html" class="transition hover:text-pink-400">Join Our Team</a>
+          <a href="contact.html" class="transition hover:text-pink-400">Contact</a>
 
-          <!-- Desktop Menu -->
-          <div
-            class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
-          >
-            <a href="http://localhost/Frontend_Development/index.html">Home</a>
+          <!-- Profile / Login -->
+          <?php if (isset($_SESSION['user_name'])): ?>
+            <div class="flex items-center gap-2 px-3 py-1 bg-pink-100 rounded-full">
+              <img src="<?php echo $_SESSION['user_image']; ?>" alt="Profile" class="w-8 h-8 rounded-full">
+              <span class="font-medium"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+            </div>
+          <?php else: ?>
+            <a href="login.php" class="px-5 py-2 font-semibold text-white transition rounded-full" style="background-color: #017b92">Login</a>
+          <?php endif; ?>
 
-            <a href="aboutus.html" class="transition hover:text-pink-400"
-              >About Us</a
-            >
-            <a href="experts.html" class="transition hover:text-pink-400"
-              >Our Experts</a
-            >
-            <a href="services.html" class="transition hover:text-pink-400"
-              >Services</a
-            >
-            <a href="mindgym.html" class="transition hover:text-pink-400"
-              >Mind Gym</a
-            >
-            <a href="team.html" class="transition hover:text-pink-400"
-              >Join Our Team</a
-            >
-            <a href="contact.html" class="transition hover:text-pink-400"
-              >Contact</a
-            >
-            <a
-              href="login.html"
-              class="px-5 py-2 font-semibold text-white transition rounded-full"
-              style="background-color: #017b92"
-            >
-              Login
-            </a>
-            <!-- Language Selector -->
-            <select
-              class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
-            >
-              <option>English</option>
-              <option>සිංහල</option>
-              <option>தமிழ்</option>
-            </select>
-          </div>
-
-          <!-- Mobile Hamburger Menu -->
-          <button
-            id="menu-toggle"
-            class="text-pink-600 md:hidden focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Items -->
-      <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
-        <div class="flex flex-col space-y-3 font-medium text-pink-600">
-          <a href="about.html" class="hover:text-pink-400">About Us</a>
-          <a href="experts.html" class="hover:text-pink-400">Our Experts</a>
-          <a href="services.html" class="hover:text-pink-400">Services</a>
-          <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
-          <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
-          <a href="contact.html" class="hover:text-pink-400">Contact</a>
-          <a
-            href="login.html"
-            class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
-          >
-            Login
-          </a>
-          <select
-            class="w-full px-2 py-1 text-sm border border-gray-300 rounded"
-          >
+          <!-- Language Selector -->
+          <select class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded">
             <option>English</option>
             <option>සිංහල</option>
             <option>தமிழ்</option>
           </select>
         </div>
-      </div>
-    </nav>
 
-    <!-- Carousel Section -->
+        <!-- Mobile Hamburger Menu -->
+        <button id="menu-toggle" class="text-pink-600 md:hidden focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Items -->
+    <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+      <div class="flex flex-col space-y-3 font-medium text-pink-600">
+        <a href="/Frontend_Development/index.html">Home</a>
+
+        <a href="aboutus.html" class="hover:text-pink-400">About Us</a>
+        <a href="ourexperts.html" class="hover:text-pink-400">Our Experts</a>
+        <a href="services.html" class="hover:text-pink-400">Services</a>
+        <a href="mindgym.html" class="hover:text-pink-400">Mind Gym</a>
+        <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
+        <a href="contact.html" class="hover:text-pink-400">Contact</a>
+
+        <?php if (isset($_SESSION['user_name'])): ?>
+          <div class="flex items-center gap-2 px-3 py-1 bg-pink-100 rounded-full">
+            <img src="<?php echo $_SESSION['user_image']; ?>" alt="Profile" class="w-8 h-8 rounded-full">
+            <span class="font-medium"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+          </div>
+        <?php else: ?>
+          <a href="login.php" class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500">Login</a>
+        <?php endif; ?>
+
+        <select class="w-full px-2 py-1 text-sm border border-gray-300 rounded">
+          <option>English</option>
+          <option>සිංහල</option>
+          <option>தமிழ்</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+<!-- Carousel Section -->
     <div class="p-4 mx-auto max-w-7xl">
       <div class="w-full swiper mySwiper">
         <div class="swiper-wrapper">
@@ -494,29 +457,36 @@
     </footer>
 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <!-- Swiper Init -->
-    <script>
-      // Mobile menu toggle
-      document.getElementById("menu-toggle").addEventListener("click", () => {
-        document.getElementById("mobile-menu").classList.toggle("hidden");
-      });
+<!-- Scripts -->
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-      // Swiper initialization
-      const swiper = new Swiper(".mySwiper", {
-        loop: true,
-        speed: 800,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-      });
-    </script>
-    <script>
-      document.getElementById("menu-toggle").addEventListener("click", () => {
-        document.getElementById("mobile-menu").classList.toggle("hidden");
-      });
-    </script>
-  </body>
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Swiper initialization
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 800,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+</body>
 </html>
+

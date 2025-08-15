@@ -127,7 +127,7 @@
         style="border-color: #017b92"
       >
         <!-- Your form starts here -->
-        <form id="registerForm" novalidate>
+        <form id="registerForm" action="register.php" method="POST" novalidate>
           <!-- First Name -->
           <div class="mb-4">
             <label
@@ -376,9 +376,8 @@
           return;
         }
 
-        // If valid, proceed (you can add form submit logic here)
-        alert("Registration successful!");
-        window.location.href = "index.html";
+        // ✅ If valid, submit to PHP so data goes to PostgreSQL
+        form.submit();
       });
     </script>
   </body>

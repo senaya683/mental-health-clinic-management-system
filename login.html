@@ -1,3 +1,44 @@
+<?php
+session_start();
+
+$host = "localhost";
+$port = "5432";
+$dbname = "final_db";
+$user = "postgres";
+$pass = "SENAYA58";
+
+$conn_string = "host=$host port=$port dbname=$dbname user=$user password=$pass";
+$dbconn = pg_connect($conn_string);
+
+if (!$dbconn) {
+    die("Connection failed: " . pg_last_error());
+}
+
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    $result = pg_query_params($dbconn, "SELECT * FROM users WHERE email = $1", [$email]);
+
+    if ($row = pg_fetch_assoc($result)) {
+        if (password_verify($password, $row['password_hash'])) {
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['email']   = $row['email'];
+            $_SESSION['role']    = $row['role'];
+            header("Location: dashbord.php");
+            exit();
+        } else {
+            $error = "Invalid password.";
+        }
+    } else {
+        $error = "User not found.";
+    }
+}
+
+pg_close($dbconn);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +53,6 @@
     <nav class="sticky top-0 z-50 bg-white shadow-md">
       <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
         <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
           <a href="index.html" class="flex items-center">
             <img
               src="https://tse1.mm.bing.net/th/id/OIP.mMwmkJAohuInWX0nhDrI0AAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
@@ -23,8 +63,6 @@
               Balance Buddy
             </span>
           </a>
-
-          <!-- Desktop Menu -->
           <div
             class="items-center hidden space-x-6 font-medium text-pink-600 md:flex"
           >
@@ -47,13 +85,12 @@
               >Contact</a
             >
             <a
-              href="login.html"
+              href="login.php"
               class="px-5 py-2 font-semibold text-white transition rounded-full"
               style="background-color: #017b92"
             >
               Login
             </a>
-            <!-- Language Selector -->
             <select
               class="px-2 py-1 ml-2 text-sm border border-gray-300 rounded"
             >
@@ -62,8 +99,6 @@
               <option>தமிழ்</option>
             </select>
           </div>
-
-          <!-- Mobile Hamburger Menu -->
           <button
             id="menu-toggle"
             class="text-pink-600 md:hidden focus:outline-none"
@@ -85,8 +120,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Mobile Menu Items -->
       <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
         <div class="flex flex-col space-y-3 font-medium text-pink-600">
           <a href="about.html" class="hover:text-pink-400">About Us</a>
@@ -96,7 +129,7 @@
           <a href="team.html" class="hover:text-pink-400">Join Our Team</a>
           <a href="contact.html" class="hover:text-pink-400">Contact</a>
           <a
-            href="login.html"
+            href="login.php"
             class="px-4 py-2 text-white bg-pink-600 rounded-full hover:bg-pink-500"
           >
             Login
@@ -112,7 +145,7 @@
       </div>
     </nav>
 
-    <!-- Login Form Centered -->
+    <!-- Login Form -->
     <div class="flex items-center justify-center flex-grow px-4">
       <div
         class="w-full max-w-md p-8 bg-white border-t-4 shadow-xl rounded-xl"
@@ -122,12 +155,17 @@
           Welcome Back
         </h2>
 
-        <form id="loginForm" novalidate>
-          <!-- Email -->
+        <?php if (!empty($error)): ?>
+        <div class="p-2 mb-4 text-red-700 bg-red-100 rounded">
+          <?= htmlspecialchars($error) ?>
+        </div>
+        <?php endif; ?>
+
+        <form method="POST" action="login.php" novalidate>
           <div class="mb-4">
-            <label for="email" class="block mb-1 font-semibold text-gray-700"
-              >Email</label
-            >
+            <label for="email" class="block mb-1 font-semibold text-gray-700">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -136,16 +174,15 @@
               placeholder="you@example.com"
               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#017B92]"
             />
-            <p class="hidden mt-1 text-sm text-red-500" id="emailError">
-              Please enter a valid email.
-            </p>
           </div>
 
-          <!-- Password -->
           <div class="mb-4">
-            <label for="password" class="block mb-1 font-semibold text-gray-700"
-              >Password</label
+            <label
+              for="password"
+              class="block mb-1 font-semibold text-gray-700"
             >
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -155,12 +192,8 @@
               placeholder="••••••••"
               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#017B92]"
             />
-            <p class="hidden mt-1 text-sm text-red-500" id="passwordError">
-              Password must be at least 6 characters.
-            </p>
           </div>
 
-          <!-- Submit -->
           <button
             type="submit"
             class="w-full py-2 px-4 bg-[#017B92] text-white font-semibold rounded-lg hover:bg-[#026c7f] transition"
@@ -169,65 +202,21 @@
           </button>
         </form>
 
-        <!-- Extra Links -->
         <div class="mt-4 text-sm text-center text-gray-600">
-          <a href="#" class="hover:underline text-[#017B92]"
-            >Forgot Password?</a
-          >
-          |
-          <!-- Link to Register -->
-          <p class="mt-6 text-center text-gray-600">
-            Don’t have an account?
-            <a
-              href="registration.html"
-              class="font-semibold text-teal-600 hover:underline"
-            >
-              Create an Account
-            </a>
-          </p>
+          <a href="#" class="hover:underline text-[#017B92]">
+            Forgot Password?
+          </a>
         </div>
+        <p class="mt-6 text-center text-gray-600">
+          Don’t have an account?
+          <a
+            href="registration.html"
+            class="font-semibold text-teal-600 hover:underline"
+          >
+            Create an Account
+          </a>
+        </p>
       </div>
     </div>
-
-    <!-- Script -->
-    <script>
-      const form = document.getElementById("loginForm");
-      const email = document.getElementById("email");
-      const password = document.getElementById("password");
-      const emailError = document.getElementById("emailError");
-      const passwordError = document.getElementById("passwordError");
-      const noAccountMessage = document.getElementById("noAccountMessage");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        let valid = true;
-
-        if (!email.validity.valid) {
-          emailError.classList.remove("hidden");
-          valid = false;
-        } else {
-          emailError.classList.add("hidden");
-        }
-
-        if (!password.validity.valid) {
-          passwordError.classList.remove("hidden");
-          valid = false;
-        } else {
-          passwordError.classList.add("hidden");
-        }
-
-        if (valid) {
-          // Simulate login logic
-          const loginSuccessful = false; // Change this to real logic later
-
-          if (loginSuccessful) {
-            window.location.href = "home.html";
-          } else {
-            noAccountMessage.classList.remove("hidden");
-          }
-        }
-      });
-    </script>
   </body>
 </html>
